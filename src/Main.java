@@ -21,7 +21,7 @@ public class Main {
             attemptsCount = ATTEMPTS_LIMIT;
 
             randomNumber = rnd.nextInt(RANDOM_LIMIT + 1);
-            System.out.printf("Я загадал число от 0 до %d. Попробуй отгадать!! \n\n", RANDOM_LIMIT);
+            System.out.printf("Я загадал число от 0 до %d. Попробуйте отгадать!! \n\n", RANDOM_LIMIT);
 
             while (isNotGuessNumber) {
                 System.out.printf("Осталось попыток: %d\nВведите целое число от 0 до %d\n", attemptsCount, RANDOM_LIMIT);
@@ -33,14 +33,14 @@ public class Main {
                             System.out.println("Поздравляю, число угадано!!!");
                             isNotGuessNumber = false;
                         } else if (userNumber < randomNumber) {
-                            System.out.println("Ты ввел число меньше загаданного");
+                            System.out.println("Вы ввели число меньше загаданного");
                             attemptsCount--;
                         } else {
-                            System.out.println("Ты ввел число больше загаданного");
+                            System.out.println("Вы ввели число больше загаданного");
                             attemptsCount--;
                         }
                         if (attemptsCount == 0) {
-                            System.out.println("Ты проиграл! Закончились попытки.");
+                            System.out.println("Вы проиграли! Закончились попытки.");
                             break;
                         }
                     } else {
@@ -48,7 +48,7 @@ public class Main {
                     }
                 } else {
                     scanner.next();
-                    System.out.println("Произошла ошибка ввода. Введите значение повторно");
+                    System.out.println("Это не целое число. Введите значение повторно");
                 }
             }
 
