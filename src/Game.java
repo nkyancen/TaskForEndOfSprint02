@@ -2,9 +2,15 @@ import java.util.Random;
 import java.util.Scanner;
 
 class Game {
-    private static final int ATTEMPTS_LIMIT = 3;
-    private static final int RANDOM_MAX = 9;
-    private static final int RANDOM_MIN = 0;
+    private static int attemptsLimit;
+    private static int randomMax;
+    private static int randomMin;
+
+    Game(int attempts, int minNumber, int maxNumber) {
+        attemptsLimit = attempts;
+        randomMin = minNumber;
+        randomMax = maxNumber;
+    }
 
     private static final Scanner scanner = new Scanner(System.in);
     private static boolean hasTheGame;
@@ -12,14 +18,14 @@ class Game {
 
     void startTheGame() {
         System.out.println("Да начнется игра!");
-        System.out.printf("Правила просты: я загадываю число от %d до %d, ты отгадываешь.\n", RANDOM_MIN, RANDOM_MAX);
-        System.out.printf("Всего у тебя есть всего %s.\n", attemptsToString(ATTEMPTS_LIMIT));
+        System.out.printf("Правила просты: я загадываю число от %d до %d, ты отгадываешь.\n", randomMin, randomMax);
+        System.out.printf("Всего у тебя есть всего %s.\n", attemptsToString(attemptsLimit));
         playTheGame();
     }
 
     private void playTheGame() {
         hasTheGame = true;
-        attemptCount = ATTEMPTS_LIMIT;
+        attemptCount = attemptsLimit;
 
         int randomNumber = generateRandomNumber();
         while (hasTheGame && attemptCount > 0) {
@@ -39,8 +45,8 @@ class Game {
 
     private int generateRandomNumber() {
         Random rnd = new Random();
-        System.out.printf("Я загадал число от %d до %d. Попробуйте отгадать!! \n\n", RANDOM_MIN, RANDOM_MAX);
-        return rnd.nextInt(RANDOM_MIN, RANDOM_MAX);
+        System.out.printf("Я загадал число от %d до %d. Попробуйте отгадать!! \n\n", randomMin, randomMax);
+        return rnd.nextInt(randomMin, randomMax);
     }
 
     private int readUserNumber() {
@@ -52,9 +58,9 @@ class Game {
     }
 
     private int getUserNumberInNeedInterval() {
-        System.out.printf("Осталось %s.\nВведите целое число от %d до %d\n", attemptsToString(attemptCount), RANDOM_MIN, RANDOM_MAX);
+        System.out.printf("Осталось %s.\nВведите целое число от %d до %d\n", attemptsToString(attemptCount), randomMin, randomMax);
         int userInput = readUserNumber();
-        while (userInput < RANDOM_MIN || userInput > RANDOM_MAX) {
+        while (userInput < randomMin || userInput > randomMax) {
             System.out.println("Число вне интервала. Введите значение повторно");
             userInput = readUserNumber();
         }
