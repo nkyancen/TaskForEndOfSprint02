@@ -97,14 +97,26 @@ class Game {
 
     private String attemptsToString(int attempts) {
         if ((attempts / 10) % 10 == 1) {
-            return String.format("%d попыткок", attempts);
+            return String.format("%d попыток", attempts);
         }
 
-        return switch (attempts % 10) {
-            case 1 -> String.format("%d попытка", attempts);
-            case 2, 3, 4 -> String.format("%d попытки", attempts);
-            default -> String.format("%d попыткок", attempts);
-        };
+        String attemptsOut;
+        switch (attempts % 10) {
+            case 1: {
+                attemptsOut = String.format("%d попытка", attempts);
+                break;
+            }
+            case 2:
+            case 3:
+            case 4: {
+                attemptsOut = String.format("%d попытки", attempts);
+                break;
+            }
+            default: {
+                attemptsOut = String.format("%d попыток", attempts);
+            }
+        }
+        return attemptsOut;
     }
 }
 
