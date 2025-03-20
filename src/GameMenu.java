@@ -5,7 +5,7 @@ public class GameMenu {
 
     private static boolean isGameMenuOn;
 
-    void startTheGame(){
+    void startTheGame() {
         isGameMenuOn = true;
 
         while (isGameMenuOn) {
@@ -25,12 +25,11 @@ public class GameMenu {
     }
 
     private String checkUserInput() {
-        String answer = "";
         boolean isRightInput = false;
+        String answer = scanner.next();
 
         while (!isRightInput) {
-            answer = scanner.next();
-            switch (answer){
+            switch (answer) {
                 case "1":
                 case "2":
                 case "3":
@@ -41,6 +40,7 @@ public class GameMenu {
                 }
                 default: {
                     System.out.println("Неправильный ввод. Повторите выбор.");
+                    answer = scanner.next();
                 }
             }
         }
@@ -69,14 +69,14 @@ public class GameMenu {
                 game.startTheGame();
                 break;
             }
-            default:{
+            default: {
                 endOfGames();
                 break;
             }
         }
     }
 
-    private Game getUserGame(){
+    private Game getUserGame() {
         System.out.println("Введите количество попыток:");
         int attempts = getUserInput();
         System.out.println("Введите минимальное число диапазона:");
@@ -86,7 +86,7 @@ public class GameMenu {
         return new Game(attempts, minOfDiapason, maxOfDiapason);
     }
 
-    private int getUserInput(){
+    private int getUserInput() {
         while (!scanner.hasNextInt()) {
             scanner.next();
             System.out.println("Это не целое число. Введите значение повторно");
