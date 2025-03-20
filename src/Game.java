@@ -18,7 +18,7 @@ class Game {
 
     void startTheGame() {
         System.out.println("Да начнется игра!");
-        System.out.printf("Правила просты: я загадываю число от %d до %d, ты отгадываешь.\n", randomMin, randomMax);
+        System.out.printf("Правила просты: я загадываю число от %d до %d, Вы отгадываете.\n", randomMin, randomMax);
         System.out.printf("Всего у тебя есть всего %s.\n", attemptsToString(attemptsLimit));
         playTheGame();
     }
@@ -45,7 +45,7 @@ class Game {
 
     private int generateRandomNumber() {
         Random rnd = new Random();
-        System.out.printf("Я загадал число от %d до %d. Попробуйте отгадать!! \n\n", randomMin, randomMax);
+//        System.out.printf("Я загадал. Попробуйте отгадать!! \n\n", randomMin, randomMax);
         return rnd.nextInt(randomMin, randomMax + 1);
     }
 

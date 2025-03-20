@@ -15,10 +15,10 @@ public class GameMenu {
 
     private void printGameMenu() {
         System.out.println("Выберите тип игры:");
-        System.out.println("1 - Малая (диапазон чисел от 0 до 9, 3 попытки);");
-        System.out.println("2 - Средняя (диапазон чисел от 0 до 99, 7 попыток);");
-        System.out.println("3 - Большая (диапазон чисел от 0 до 999, 10 попыток);");
-        System.out.println("4 - Пользовательская (диапазон чисел и количество попыток задается вручную);");
+        System.out.println("1 - Малая"); // (диапазон чисел от 0 до 9, 3 попытки)
+        System.out.println("2 - Средняя"); // (диапазон чисел от 0 до 99, 7 попыток)
+        System.out.println("3 - Большая"); // (диапазон чисел от 0 до 999, 10 попыток)
+        System.out.println("4 - Пользовательская"); // (диапазон чисел и количество попыток задается вручную)
         System.out.println("0 - Выход.");
 
         chooseGameType(checkUserInput());
