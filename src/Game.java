@@ -46,7 +46,7 @@ class Game {
     private int generateRandomNumber() {
         Random rnd = new Random();
         System.out.printf("Я загадал число от %d до %d. Попробуйте отгадать!! \n\n", randomMin, randomMax);
-        return rnd.nextInt(randomMin, randomMax);
+        return rnd.nextInt(randomMin, randomMax + 1);
     }
 
     private int readUserNumber() {
@@ -97,7 +97,7 @@ class Game {
     }
 
     private void finishTheGame() {
-        System.out.println("Игра окончена. До скорых встреч.");
+        System.out.println("Игра окончена.");
         scanner.close();
     }
 
