@@ -18,7 +18,7 @@ class Game {
 
     void startTheGame() {
         System.out.println("Да начнется игра!");
-        System.out.printf("Правила просты: я загадываю число от %d до %d, Вы отгадываете.\n", randomMin, randomMax);
+        System.out.printf("Я загадал число от %d до %d. Попробуйте отгадать!.\n", randomMin, randomMax);
         System.out.printf("Всего есть %s.\n\n", attemptsToString(attemptsLimit));
         playTheGame();
     }
@@ -72,9 +72,9 @@ class Game {
             System.out.println("Поздравляю, число угадано!!!");
             hasTheGame = false;
         } else if (userNumber < randomNumber) {
-            System.out.println("Вы ввели число меньше загаданного");
+            System.out.println("Вы ввели число меньше загаданного.\n");
         } else {
-            System.out.println("Вы ввели число больше загаданного");
+            System.out.println("Вы ввели число больше загаданного.\n");
         }
     }
 
