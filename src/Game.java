@@ -57,7 +57,10 @@ class Game {
     }
 
     private int getUserNumberInNeedInterval() {
-        System.out.printf("Осталось %s.\nВведите целое число от %d до %d\n", attemptsToString(attemptCount), randomMin, randomMax);
+        if (attemptCount < attemptsLimit) {
+            System.out.printf("Осталось %s\n", attemptsToString(attemptCount));
+        }
+        System.out.printf("Введите целое число от %d до %d\n", randomMin, randomMax);
         int userInput = readUserNumber();
         while (userInput < randomMin || userInput > randomMax) {
             System.out.println("Число вне интервала. Введите значение повторно");
