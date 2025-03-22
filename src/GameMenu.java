@@ -78,7 +78,7 @@ public class GameMenu {
 
     private Game getUserGame() {
         System.out.println("Введите количество попыток:");
-        int attempts = getUserAttempts();
+        int attempts = getUserPositiveInput();
         System.out.println("Введите минимальное число диапазона:");
         int minOfDiapason = getUserInput();
         System.out.println("Введите максимальное число диапазона:");
@@ -94,7 +94,7 @@ public class GameMenu {
         return scanner.nextInt();
     }
 
-    private int getUserAttempts() {
+    private int getUserPositiveInput() {
         int userAttempts = getUserInput();
         while (userAttempts <= 0) {
             System.out.println("Количество попыток должно быть положительным. Повторите ввод");
